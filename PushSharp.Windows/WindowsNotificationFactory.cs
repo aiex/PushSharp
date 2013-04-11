@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PushSharp.Core;
 
 namespace PushSharp.Windows
 {
-	public class WindowsNotificationFactory : Common.Notification
+	public class WindowsNotificationFactory : Notification
 	{
 		public WindowsToastNotification Toast()
 		{
@@ -22,10 +23,15 @@ namespace PushSharp.Windows
 		{
 			return new WindowsRawNotification();
 		}
-
-		public WindowsBadgeNotification Badge()
+		
+		public WindowsBadgeNumericNotification BadgeNumeric()
 		{
-			return new WindowsBadgeNotification();
+			return new WindowsBadgeNumericNotification();
+		}
+
+		public WindowsBadgeGlyphNotification BadgeGlyph()
+		{
+			return new WindowsBadgeGlyphNotification();
 		}
 	}
 }
